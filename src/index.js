@@ -6,16 +6,24 @@ import ExchangeRateAPI from './API-currency-exchange.js';
 
 
 function getExchangeInfofromResponse(response,dollarAmount) {
-  if (response.bikes) {
-    $('.showTitle').html("");
-    for(let i = 0; i < response.bikes.length; i++) { 
-      let a = i+1;
-      $('.showTitle').append("<b>Bike " + a + ferf + ": " + "</b>" + response.bikes[i].title + " was stolen " + "<br>");
-    }
+  if (response.conversion_rates){
+    $('.showConversion').html(response.conversion_rates. + "a dollarAmount);
   } else {
     $('.showErrors').text(`There was an error: ${response}`);
   }
 }
+
+// function getExchangeInfofromResponse(response,dollarAmount) {
+//   if (response.bikes) {
+//     $('.showTitle').html("");
+//     for(let i = 0; i < response.bikes.length; i++) { 
+//       let a = i+1;
+//       $('.showTitle').append("<b>Bike " + a + ferf + ": " + "</b>" + response.bikes[i].title + " was stolen " + "<br>");
+//     }
+//   } else {
+//     $('.showErrors').text(`There was an error: ${response}`);
+//   }
+// }
 
 async function makeApiCall(dollarAmount) {
   const response = await ExchangeRateAPI.getExchangeRate();
@@ -26,6 +34,13 @@ async function makeApiCall(dollarAmount) {
 
 $('#go').click(function() {
   let dollarAmount = parseInt($('#dollar-amount').val());
-  let otherCurrency = parseInt($('#currency-type').val());
+  //let otherCurrency = parseInt($('#currency-type').val());
   makeApiCall(dollarAmount);
 });
+
+
+// Japanese Yen (JPY)
+// European Euro (EUR)
+// British Pound (GBP)
+// Swiss Franc (CHF)
+// Canadian Dollar (CAD)
