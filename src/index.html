@@ -5,16 +5,22 @@
 <body>
   <div class="container">
     <h1>Currency-Exchanger</h1>
-    <label for="dollar-amount">Enter dollar amount:</label>
     </br>
-    <input id="dollar-amount" type="text">
+    <label for="dollar-amount"><B>Enter dollar amount:</B></label>
+    <input id="dollar-amount" type="number">
     </br>
-    <label for="currency-type">Enter currency it should be converted to:</label>
-    </br>
-    <input id="currency-type" type="text">
-    </br>
+    <label for="currency-type"><strong>Enter currency it should be converted to:</strong></label>
+      <select class="form-control" id="currency-type">
+        <option value="0">---Select--- </option>
+        <option value="JPY">Japanese Yen (JPY)</option>
+        <option value="EUR">European Euro (EUR)</option>
+        <option value="GBP">British Pound (GBP)</option>
+        <option value="CHF">Swiss Franc (CHF)</option>
+        <option value="CAD">Canadian Dollar (CAD)</option>
+      </select>
     <button class="btn-success" id="go">Go</button>
     <div class="showErrors"></div>
+    </br>
     <div class="showConversion"></div>
   </div>
 </body>
