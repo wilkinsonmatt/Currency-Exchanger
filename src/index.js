@@ -17,7 +17,7 @@ function getExchangeInfofromResponse(response,dollarAmount,otherCurrency) {
     } else if(otherCurrency === "CAD"){
       $('.showConversion').html("$1.00 U.S Dollar (USD) = " + "$" + response.conversion_rates.CAD + " Canadian Dollars (CAD)" + "</br>" + "$" + dollarAmount + " U.S Dollars (USD) = " + "$" + response.conversion_rates.CAD * dollarAmount + " Canadian Dollars (CAD)");
     } else {
-      $('.showConversion').html("the currency in question doesn't exist.");
+      $('.showConversion').html("the currency in question doesn't exist");
     }
   } else {
     $('.showErrors').text(`There was an error: ${response}`);
